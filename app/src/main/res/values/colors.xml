@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#ffffff</color>
+    <!--solid color-->
+    <color name="black">#000</color>
+    <color name="black_separator">#5a5a5a</color>
+    <color name="text_black">#565656</color>
+    <color name="half_black">#808080</color>
+    <color name="text_grey">#878787</color>
+    <color name="grey_pressed">#AAA7A2</color>
+    <color name="grey_background">#dedede</color>
+    <color name="light_grey">#f4f4f4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="ripple_color">#F0A940</color>
+    <color name="golden_rod">#B8860B</color>
+    <color name="golden">#c98802</color>
+    <color name="light_golden">#F0A940</color>
+    <color name="red">#E53935</color>
+    <color name="pressed_red">#F44336</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="mediumgreensea">#3cb371    </color>
+    <color name="blue">#1565C0</color>
+    <color name="light_blue">#3498DB</color>
+    <color name="pressed_blue">#1976D2</color>
+    <color name="green_tosca_2">#2ED1A2</color>
+    <color name="green_tosca">#1ABC9C</color>
+    <!--transparan color-->
+    <color name="transparant">#00ffffff</color>
+    <color name="black_transparent">#50000000</color>
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="bg_product_list">#eff2f1</color>
+</resources>

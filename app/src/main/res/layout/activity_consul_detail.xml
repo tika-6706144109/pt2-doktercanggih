@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="vm"
+            type="team.iyooo.id.doktercanggih.ui.viewmodel.ConsulDetailViewModel"/>
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/toolbar"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="{{Bagaimana cara cepat sembuh dari kanker?}}"
+                    app:text="@{vm.title}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:text="Pertanyaan:"
+                    android:textSize="12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"/>
+
+                <TextView
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"
+                    tools:text="{{Dok, saya mau nanya saya sudah memiliki penyakit kanker selama 5 tahun, berbagai pengobatan pun sudah saya lakukan, bagaimana yah dok?}}"
+                    app:text="@{vm.ask}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    tools:text="{{Dr. Wells}}"
+                    app:text="@{vm.nameDokter}"
+                    android:textSize="12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Jawab:"
+                    android:textSize="12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"/>
+
+                <TextView
+                    android:visibility="gone"
+                    app:visibility="@{vm.isAnswer ? View.VISIBLE:View.GONE}"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"
+                    tools:text="{{Sepertinya anda harus melakukan terapi dan banyak banyak mengkonsumsi makanan yang sehat dan bergizi serta olahraga yang teratur}}"
+                    app:text="@{vm.answer}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    app:visibility="@{vm.isAnswer ? View.GONE:View.VISIBLE}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/answer"
+                        android:background="@drawable/edit_button_green_box"
+                        style="@style/MyEditTextBorder"
+                        android:hint="Isi jawaban anda..."
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:textSize="14sp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="38dp"
+                        android:gravity="left"
+                        android:layout_marginBottom="15dp" />
+
+                    <com.joanzapata.iconify.widget.IconTextView
+                        android:text="{fa-edit}"
+                        android:onClick="onClickAnswer"
+                        android:textColor="@color/green_tosca"
+                        android:textSize="26sp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:background="@color/light_grey"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Komentar"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:paddingTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/commentText"
+                        android:background="@drawable/edit_button_green_box"
+                        android:textSize="14sp"
+                        android:padding="12dp"
+                        android:hint="Tulis komentar..."
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine" />
+                    <com.joanzapata.iconify.widget.IconTextView
+                        android:text="{fa-send}"
+                        android:onClick="onClickComment"
+                        android:textColor="@color/green_tosca"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                </LinearLayout>
+
+                <!--<include layout="@layout/row_consul_comment"/>-->
+                <!--<include layout="@layout/row_consul_comment"/>-->
+                <!--<include layout="@layout/row_consul_comment"/>-->
+                <!--<include layout="@layout/row_consul_comment"/>-->
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
+
+</layout>

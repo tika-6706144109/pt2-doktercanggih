@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_centerHorizontal="true"
+                    android:src="@color/green_tosca"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:textSize="34sp"
+                    android:textColor="@color/white"
+                    android:text="{fa-camera}"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:padding="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:enabled="false"
+                    android:text="Tika Febriyanti"
+                    android:background="@drawable/edit_button_green"
+                    style="@style/MyEditTextBorder"
+                    android:hint="Nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:enabled="false"
+                    android:text="Komp. Telkom University"
+                    android:background="@drawable/edit_button_green"
+                    style="@style/MyEditTextBorder"
+                    android:hint="Alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp" />
+
+                <EditText
+                    android:enabled="false"
+                    android:text="08242232313"
+                    android:background="@drawable/edit_button_green"
+                    style="@style/MyEditTextBorder"
+                    android:hint="No Hp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:singleLine="true"
+                    android:inputType="phone"/>
+
+                <EditText
+                    android:enabled="false"
+                    android:text="tika@gmail.com"
+                    android:background="@drawable/edit_button_green"
+                    style="@style/MyEditTextBorder"
+                    android:hint="Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress"/>
+
+                <TextView
+                    android:text="Tanggal Lahir"
+                    android:textSize="18sp"
+                    android:textColor="@color/text_grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="15dp">
+
+                    <Spinner
+                        android:entries="@array/day"
+                        android:prompt="@string/chooseDay"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"/>
+
+                    <Spinner
+                        android:entries="@array/month"
+                        android:prompt="@string/chooseMonth"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"/>
+
+                    <Spinner
+                        android:entries="@array/year"
+                        android:prompt="@string/chooseYear"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"/>
+                </LinearLayout>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="15dp">
+                    <RadioButton
+                        android:enabled="false"
+                        android:text="Laki-laki"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"/>
+                    <RadioButton
+                        android:checked="true"
+                        android:text="Perempuan"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RadioGroup>
+
+                <Button
+                    android:text="Ubah Data Diri"
+                    android:textColor="@color/white"
+                    android:background="@drawable/selector_button_green"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:onClick="onClickDaftar"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
